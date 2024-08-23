@@ -1,5 +1,3 @@
-<center>  
-
 ```
                   888b     d888                                             
                   8888b   d8888                                             
@@ -14,13 +12,47 @@
                                          888      888                       
 ```
 
-</center>
+## Overview
 
-## Description
-Implementation of a selector based on NLP techniques that searches for a specific sequence among DNA/RNA long-reads. The software does not use alignment algorithms (such as Needleman-Wunsch or Smith-Waterman) in its work and is a *'noMapping mapping'* solution.
+NoMapper is an NLP-based selector designed to search for specific sequences, markers, genes. Unlike traditional methods, NoMapper does not use alignment algorithms like Needleman-Wunsch or Smith-Waterman in its work. Instead, the entire concept of the system is based on the "*noMapping mapping*" approach, allowing for creating efficient sequence selector.
 
-## ▸ Prepare noMapper ◂
-### Getting Started
+## Getting Started
+To use it, navigate to the "*Use noMapper*" section and follow the provided instructions. The tool requires a model and an encoder specifically tailored for the search of the desired sequence, marker, gene. For instance, if you are interested in searching for the FDXR gene, you can download and use the example NoMapper by obtaining the necessary files [File X] and [File Y]. If you wish to search for sequences other than FDXR, you should go to the "*Prepare noMapper*" section. Here, you will find detailed instructions on how to train NoMapper to suit your specific needs. This flexibility allows you to adapt NoMapper for various genetic markers, enabling a wide range of applications.
+
+## Use noMapper
+1. Go to the relevant directory
+    ```bash
+    cd docker/nomapper/
+    ```
+2. Insert in the `vol/` directory
+    - `model.h5` - the trained model
+    - `cv.pkl` - the encoder
+3. Set the configuration file `vol/config.ini`
+4. Download latest stable version
+    ```bash
+    docker pull drdext3r/nomapper
+    ```
+5. Run the docker container
+    ```bash
+    docker run -it -v $(pwd)/vol:/vol -p 8000:8000 --name nomapper drdext3r/nomapper:latest
+    ```
+6. Predict in a new window
+    ```bash
+    curl -X POST "http://127.0.0.1:8000/predict/" -H "accept: application/json" -H "Content-Type: application/json" -d '{"seq": "<long-read>"}'
+    ```
+    Outputs:
+    ```json
+    {"result":"found"}
+    ```
+    ```json
+    {"result":"not found"}
+    ```
+7. Exit the docker container
+    ```bash
+    exit
+    ```
+
+## Prepare noMapper
 1. Go to the relevant directory
     ```bash
     cd docker/nomapper-maker/
@@ -59,38 +91,3 @@ Implementation of a selector based on NLP techniques that searches for a specifi
 ### Outcome
 - `model.h5` - the trained model
 - `cv.pkl` - the encoder
-
-
-## ▸ Use noMapper ◂
-### Getting Started
-1. Go to the relevant directory
-    ```bash
-    cd docker/nomapper/
-    ```
-2. Insert in the `vol/` directory
-    - `model.h5` - the trained model
-    - `cv.pkl` - the encoder
-3. Set the configuration file `vol/config.ini`
-4. Download latest stable version
-    ```bash
-    docker pull drdext3r/nomapper
-    ```
-5. Run the docker container
-    ```bash
-    docker run -it -v $(pwd)/vol:/vol -p 8000:8000 --name nomapper drdext3r/nomapper:latest
-    ```
-6. Predict in a new window
-    ```bash
-    curl -X POST "http://127.0.0.1:8000/predict/" -H "accept: application/json" -H "Content-Type: application/json" -d '{"seq": "<long-read>"}'
-    ```
-    Outputs:
-    ```json
-    {"result":"found"}
-    ```
-    ```json
-    {"result":"not found"}
-    ```
-7. Exit the docker container
-    ```bash
-    exit
-    ```
