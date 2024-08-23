@@ -30,6 +30,10 @@ To use it, navigate to the "*Use noMapper*" section and follow the provided inst
 4. Download latest stable version
     ```bash
     docker pull drdext3r/nomapper
+    ```  
+    or build  
+    ```bash
+    docker build . -t drdext3r/nomapper:latest
     ```
 5. Run the docker container
     ```bash
@@ -63,11 +67,15 @@ To use it, navigate to the "*Use noMapper*" section and follow the provided inst
     ```bash
     docker pull drdext3r/nomapper-maker
     ```
-4. Run the docker container
+    or build  
+    ```bash
+    docker build . -t drdext3r/nomapper-maker:latest
+    ```
+5. Run the docker container
     ```bash
     docker run -it -v $(pwd)/vol:/vol --name nomapper-maker drdext3r/nomapper-maker:latest
     ```
-5. Train the model  
+6. Train the model  
     with default configuration
     ```bash
     do-all
@@ -79,11 +87,11 @@ To use it, navigate to the "*Use noMapper*" section and follow the provided inst
     python3 train.py --kmer_size=4 
     chmod 777 /vol/model.h5
     ```    
-6. Clean out unnecessary files (optional)
+7. Clean out unnecessary files (optional)
     ```bash
     clean-all
     ```
-7. Exit the docker container
+8. Exit the docker container
     ```bash
     exit
     ```
