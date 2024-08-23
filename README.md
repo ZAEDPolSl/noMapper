@@ -14,7 +14,7 @@
 
 ## Overview
 
-NoMapper is an NLP-based selector designed to search for specific sequences, markers, genes. Unlike traditional methods, NoMapper does not use alignment algorithms like Needleman-Wunsch or Smith-Waterman in its work. Instead, the entire concept of the system is based on the "*noMapping mapping*" approach, allowing for creating efficient sequence selector.
+NoMapper is an NLP-based selector designed to search for specific sequences, markers, genes among DNA/RNA long-reads. Unlike traditional methods, NoMapper does not use alignment algorithms like Needleman-Wunsch or Smith-Waterman in its work. Instead, the entire concept of the system is based on the "*noMapping mapping*" approach, allowing for creating efficient sequence selector.
 
 ## Getting Started
 To use it, navigate to the "*Use noMapper*" section and follow the provided instructions. The tool requires a model and an encoder specifically tailored for the search of the desired sequence, marker, gene. For instance, if you are interested in searching for the FDXR gene, you can download and use the example NoMapper by obtaining the necessary files [File X] and [File Y]. If you wish to search for sequences other than FDXR, you should go to the "*Prepare noMapper*" section. Here, you will find detailed instructions on how to train NoMapper to suit your specific needs. This flexibility allows you to adapt NoMapper for various genetic markers, enabling a wide range of applications.
