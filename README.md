@@ -13,11 +13,10 @@
 ```
 
 ## Overview
-
 NoMapper is an NLP-based selector designed to search for specific sequences, markers, genes among DNA/RNA long-reads. Unlike traditional methods, NoMapper does not use alignment algorithms like Needleman-Wunsch or Smith-Waterman in its work. Instead, the entire concept of the system is based on the "*noMapping mapping*" approach, allowing for creating efficient sequence selector.
 
-## Getting Started
-To use it, navigate to the "*Use noMapper*" section and follow the provided instructions. The tool requires a model and an encoder specifically tailored for the search of the desired sequence, marker, gene. For instance, if you are interested in searching for the FDXR gene, you can download and use the example NoMapper by obtaining the necessary files [File X] and [File Y]. If you wish to search for sequences other than FDXR, you should go to the "*Prepare noMapper*" section. Here, you will find detailed instructions on how to train NoMapper to suit your specific needs. This flexibility allows you to adapt NoMapper for various genetic markers, enabling a wide range of applications.
+## Getting started
+To use it, navigate to the "*Use noMapper*" section and follow the provided instructions. The tool requires a model and an encoder specifically tailored for the search of the desired sequence, marker, gene. For instance, if you are interested in searching for the FDXR gene, you can download and use the example NoMapper by obtaining the necessary files `model.h5` and `cv.pkl` ([link](https://github.com/ZAEDPolSl/noMapper/releases/download/v0.1.0/FDXR.zip)). If you wish to search for sequences other than FDXR, you should go to the "*Prepare noMapper*" section. Here, you will find detailed instructions on how to train NoMapper to suit your specific needs. This flexibility allows you to adapt NoMapper for various genetic markers, enabling a wide range of applications.
 
 ## Use noMapper
 1. Go to the relevant directory
@@ -27,7 +26,7 @@ To use it, navigate to the "*Use noMapper*" section and follow the provided inst
 2. Insert in the `vol/` directory
     - `model.h5` - the trained model
     - `cv.pkl` - the encoder
-3. Set the configuration file `vol/config.ini`
+3. Set the configuration file `vol/config.ini` (if a custom configuration was used when training the model in "*Prepare noMapper*")
 4. Download latest stable version
     ```bash
     docker pull drdext3r/nomapper
