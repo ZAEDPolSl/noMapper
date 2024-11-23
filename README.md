@@ -98,3 +98,17 @@ To use it, navigate to the "*Use noMapper*" section and follow the provided inst
 ### Outcome
 - `model.h5` - the trained model
 - `cv.pkl` - the encoder
+
+## Citing
+If you use **noMapper** in your work, please cite:
+
+> Strzoda, T., Cruz-Garcia, L., Najim, M., Badie, C., Polanska, J. A mapping-free natural language processing-based technique for sequence search in nanopore long-reads. BMC Bioinformatics 25, 354 (2024). https://doi.org/10.1186/s12859-024-05980-7
+
+
+You can read the full article [here](https://doi.org/10.1186/s12859-024-05980-7).
+
+## Author  
+**Tomasz Strzoda**
+- Email: Tomasz.Strzoda@polsl.pl
+- [GitHub](https://github.com/DrDEXT3R/)
+- [Website](https://tomaszstrzoda.com/)
